@@ -2,7 +2,7 @@
 
 import requests
 import json
-import base
+from powietrze import base
 
 
 class APIError(Exception):

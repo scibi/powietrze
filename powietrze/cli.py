@@ -4,7 +4,7 @@
 import sys
 import click
 
-import sync
+from powietrze import sync
 
 
 def print_station(station) -> None:

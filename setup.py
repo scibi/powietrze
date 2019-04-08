@@ -11,7 +11,7 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = ['Click>=6.0', ]
+requirements = ['Click>=6.0', 'requests>=2.21.0']
 
 setup_requirements = ['pytest-runner', ]
 
@@ -36,7 +36,7 @@ setup(
     description="Python library to talk to the http://powietrze.gios.gov.pl API.",
     entry_points={
         'console_scripts': [
-            'powietrze=powietrze.cli:main',
+            'powietrze=powietrze.cli:cli',
         ],
     },
     install_requires=requirements,
