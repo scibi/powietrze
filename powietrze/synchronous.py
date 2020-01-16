@@ -37,8 +37,8 @@ class API(base.BaseAPI):
 
 
 class StationSync(base.BaseStation):
-    def __init__(self, station_id, name, city, lon, lat, timeout=5, distance=None):
-        super().__init__(station_id, name, city, lon, lat, timeout, distance)
+    def __init__(self, api, station_id, name, city, lon, lat, timeout=5, distance=None):
+        super().__init__(api, station_id, name, city, lon, lat, timeout, distance)
 
     def fetch_sensors_data(self):
         self._sensors_data = sync_fetch_json(

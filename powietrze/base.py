@@ -52,6 +52,7 @@ class BaseAPI:
 
     def _create_station_object(self, class_name, station, distance=None):
         return class_name(
+                api=self,
                 station_id=station['id'],
                 name=station['stationName'],
                 city=station['city']['name'],
@@ -62,7 +63,9 @@ class BaseAPI:
 
 
 class BaseStation:
-    def __init__(self, station_id, name, city, lon, lat, timeout=5, distance=None):
+    def __init__(self, api, station_id, name, city, lon, lat, timeout=5, distance=None):
+        self._api = api
+
         self._station_id = station_id
         self._api_station_url = 'http://api.gios.gov.pl/pjp-api/rest/station/sensors/{stationId}'
         self._api_sensor_url = 'http://api.gios.gov.pl/pjp-api/rest/data/getData/{sensorId}'
@@ -93,6 +96,9 @@ class BaseStation:
 
     def _get_sensors_ids(self):
         return [sensor['id'] for sensor in self._sensors_data]
+
+    def get_available_params(self):
+        return [sensor['param']['paramCode'] for sensor in self._sensors_data]
 
     def get_newest_measurements(self):
         rv = {}
