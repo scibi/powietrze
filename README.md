@@ -1,6 +1,6 @@
 # Powietrze
 
-Narzędzie do importu i analizy danych jakości powietrza z bazy PostgreSQL.
+Narzędzie do importu i analizy danych na temat jakości powietrza pobranych z [Banku Danych GIOŚ](https://powietrze.gios.gov.pl/pjp/archives) do bazy PostgreSQL.
 
 ## Instalacja
 
