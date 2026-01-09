@@ -40,7 +40,6 @@ uv.lock
 .ipynb_checkpoints/
 
 # Generated files
-*.png
 *.jpg
 *.jpeg
 *.gif
